@@ -8,6 +8,8 @@ if (Meteor.isClient) {
     }
   });
 
+
+// Event handlers use a dict to describe a) the event and b) the handler
   Template.body.events({
   	"submit .new-task": function (event) {
   		console.log(event);
@@ -22,5 +24,17 @@ if (Meteor.isClient) {
   		event.target.text.value = "";
   	}
   });
-}
 
+
+Template.task.events({
+    "click .toggle-checked": function () {
+      // Set the checked property to the opposite of its current value
+      Tasks.update(this._id, {
+        $set: {checked: ! this.checked}
+      });
+    },
+    "click .delete": function () {
+      Tasks.remove(this._id);
+    }
+  });
+}
