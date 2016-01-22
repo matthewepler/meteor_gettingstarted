@@ -11,6 +11,17 @@
         <input type="checkbox" checked="{{hideCompleted}}" />
         Hide Completed Tasks
       </label>
+<<<<<<< HEAD
+
+      {{> loginButtons}}
+
+      {{#if currentUser}}
+        <form class="new-task">
+          <input type="text" name="text" placeholder="Type to add new tasks" />
+        </form>
+      {{/if}}
+=======
+>>>>>>> a404becded3a04713aebe6c449c07f9f42a7ff6d
 
       {{> loginButtons}}
 
